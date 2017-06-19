@@ -1,0 +1,31 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname play) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(require 2htdp/batch-io)
+
+;; convert fahrenheit to celsius
+
+
+;; read input and print newline
+(define RAW-INPUT (read-file 'stdin))
+(write-file 'stdout "\n")
+
+;; convert input string to number
+
+(define INPUT-F (string->number RAW-INPUT))
+
+;; convert to celsius
+
+(define (C f) (* 5/9 (- f 32)))
+
+;; run function on input and convert to inexact
+
+(define RAW-OUTPUT (exact->inexact (C INPUT-F)))
+
+;; convert output number back to string
+
+(define OUTPUT-C (number->string RAW-OUTPUT))
+
+;; print output
+
+(write-file 'stdout (string-append OUTPUT-C "\n"))
